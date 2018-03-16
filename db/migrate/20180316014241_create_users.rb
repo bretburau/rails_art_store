@@ -4,6 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password_digest
       t.integer :permissions, :default => 100
+      t.string :first_name
+      t.string :last_name
       t.timestamps
     end
   end

@@ -13,6 +13,10 @@
 <%= form_for @user do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %><br>
+  <%= f.label "First Name" %>
+  <%= f.text_field :first_name %><br>
+  <%= f.label "Last Name" %>
+  <%= f.text_field :last_name %><br>
   <%= f.label :password %>
   <%= f.password_field :password %><br>
   <%= f.label "Re-enter password" %>
