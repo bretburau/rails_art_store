@@ -40,7 +40,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry'
-
+  gem "omniauth-google-oauth2", "~> 0.2.1"
 end
 
 group :development do
