@@ -1,0 +1,13 @@
+<nav class="">
+    <ul>
+        <li> Add store home here </li>
+        <% if !logged_in? %>
+            <li><%= link_to "sign in", login_path %></li>
+            <li><%= link_to "Sign up", new_user_path %></li>
+        <% else %>
+            <li><%= "Signed in as #{current_user.email}" %></li>
+            Add Current Cart here TODO
+            <li><%= link_to "Sign out", logout_path, method: :delete %></li>
+        <% end %>
+    </ul>
+</nav>
