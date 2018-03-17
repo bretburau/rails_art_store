@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  validates :email, presence: true, uniqueness: true
-  validates :password, { :length => { :in => 6..20 } }
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  has_secure_password
+  # validates :email, presence: true, uniqueness: true
+  # validates :password, { :length => { :in => 6..20 } }
+  # validates :password, confirmation: true
+  # validates :password_confirmation, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # has_secure_password
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|

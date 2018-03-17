@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 20180316014241) do
     t.integer "permissions", default: 100
     t.string "first_name"
     t.string "last_name"
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
