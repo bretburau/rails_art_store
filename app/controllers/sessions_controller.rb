@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       @user = User.from_omniauth(request.env["omniauth.auth"])
     else
       @user = User.find_by(email: params[:user][:email])
-      return head(:forbidden) unless @user.authenticate(params[:user][:password])
+      return head(:forbidden) unless !@user.nil? && @user.authenticate(params[:user][:password])
     end
     session[:user_id] = @user.id
     redirect_to user_path(@user)
