@@ -42,6 +42,7 @@ group :development, :test do
   gem 'pry'
   gem 'omniauth'
   gem "omniauth-google-oauth2", "~> 0.2.1"
+  gem 'dotenv-rails'
 end
 
 group :development do
