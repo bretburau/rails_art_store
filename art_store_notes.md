@@ -12,7 +12,7 @@ User
 
 
 Piece
-  belongs to user
+  belongs to user(artist/author)
   has many categories
   prints_available?
 

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  # validates :email, presence: true, uniqueness: true
+  attr_accessor :skip_email_validation
+  validates :email, presence: true, uniqueness: true, unless: :skip_email_validation
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_secure_password
@@ -20,6 +21,7 @@ class User < ApplicationRecord
         user.first_name = both_names.first
         user.last_name = both_names.last
       end
+      user.skip_email_validation = true
       user.save!
     end
   end
