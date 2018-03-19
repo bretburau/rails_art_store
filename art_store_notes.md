@@ -2,14 +2,19 @@ User
   has_secure_password
   authentication...
   login
-  has many pieces
   Admin/seller/user
-    seller has many categories through pieces
-    seller can add pieces, with nested categories
     admin can do it all, and edit users
   Has current cart
   has many carts
+
+Artist
+  inhereits from user, has higher permissions
+  seller has many categories through pieces
+  seller can add pieces, with nested categories
   has many categories through pieces
+  has many pieces
+
+
 
 
 Piece
