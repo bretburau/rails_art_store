@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 20180319114920) do
 
   create_table "pieces", force: :cascade do |t|
     t.string "name"
-    t.integer "artist_id"
-    t.boolean "prints_available?"
-    t.boolean "original_available?"
+    t.integer "user_id"
+    t.boolean "prints_available?", default: false
+    t.boolean "original_available?", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

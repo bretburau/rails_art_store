@@ -19,6 +19,9 @@ Piece
 Categories
   has many pieces
 
+Favorites/Likes?...Shares?
+  if provider = "facebook" then have share button
+
 LineItem
 
 Cart

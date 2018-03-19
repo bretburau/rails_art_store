@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, unless: :skip_email_validation
   validates :first_name, presence: true
   validates :last_name, presence: true
+  has_many :pieces
   has_secure_password
 
   def self.from_omniauth(auth)
@@ -16,13 +17,13 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.email = auth.info.email
-      if auth.provider = "facebook"
+      if auth.provider = "facebook" #facebook doesn't prove first/last seperatly
         both_names = auth.info.name.split
         user.first_name = both_names.first
         user.last_name = both_names.last
       end
-      user.skip_email_validation = true
+      user.skip_email_validation = true #Allows email and multiple oauth accounts
       user.save!
     end
   end
-end
+end 
