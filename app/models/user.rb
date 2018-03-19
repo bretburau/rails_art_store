@@ -1,11 +1,10 @@
 class User < ApplicationRecord
-  validates :email, presence: true, uniqueness: true
+  # validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_secure_password
 
   def self.from_omniauth(auth)
-    binding.pry
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
       user.uid = auth.uid
@@ -16,6 +15,11 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.email = auth.info.email
+      if auth.provider = "facebook"
+        both_names = auth.info.name.split
+        user.first_name = both_names.first
+        user.last_name = both_names.last
+      end
       user.save!
     end
   end
