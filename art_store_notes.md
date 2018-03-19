@@ -9,6 +9,7 @@ User
     admin can do it all, and edit users
   Has current cart
   has many carts
+  has many categories through pieces
 
 
 Piece
@@ -18,6 +19,8 @@ Piece
 
 Categories
   has many pieces
+  has many users(artists) through pieces
+  
 
 Favorites/Likes?...Shares?
   if provider = "facebook" then have share button
