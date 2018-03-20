@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :get_user, only: [:show, :edit]
   def new
     @user = User.new
   end
@@ -18,9 +18,11 @@ class UsersController < ApplicationController
       render new_user_path
     end
   end
+  
+  def edit
+  end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def destroy
@@ -30,5 +32,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+  end
+
+  def get_user
+    @user = User.find(params[:id])
   end
 end
