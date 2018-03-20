@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories #TODO Clean these up
   resources :pieces
   resources :users 
   resources :artists
