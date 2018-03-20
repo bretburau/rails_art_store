@@ -34,5 +34,8 @@ LineItem
 
 Cart
 
+
+START Sever: rails s -b 'ssl://localhost:3000?key=localhost.key&cert=localhost.crt'
+
 ##Dynamic dispatch
 ##Dynamic definition

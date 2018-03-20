@@ -17,6 +17,11 @@
   <%= f.text_field :first_name %><br>
   <%= f.label "Last Name" %>
   <%= f.text_field :last_name %><br>
+  <!--#TODO Get these into form_helper format? -->
+  <%= radio_button_tag "type", "artist" %>
+  <label for="type_artist">Artist</label>
+  <%= radio_button_tag "type", "customer" %>
+  <label for="type_customer">Customer</label><br>
   <%= f.label :password %>
   <%= f.password_field :password %><br>
   <%= f.label "Re-enter password" %>

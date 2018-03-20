@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create ##TODO redirect to Artist's CP if user is an artist!!!!
+    raise params
     if request.env["omniauth.auth"]
       @user = User.from_omniauth(request.env["omniauth.auth"])
     else
