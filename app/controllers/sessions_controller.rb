@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def create ##TODO redirect to Artist's CP if user is an artist!!!!
-    raise params
     if request.env["omniauth.auth"]
       @user = User.from_omniauth(request.env["omniauth.auth"])
     else
@@ -12,7 +11,11 @@ class SessionsController < ApplicationController
       return head(:forbidden) unless !@user.nil? && @user.authenticate(params[:user][:password])
     end
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    if @user.is_artist?
+      redirect_to artist_path(@user)
+    else
+      redirect_to user_path(@user)
+    end
   end
 
   def destroy
