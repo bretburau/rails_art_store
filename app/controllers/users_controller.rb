@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show, :edit]
+  before_action :get_user, only: [:show, :edit, :create, :update]
+
   def new
     @user = User.new
   end
@@ -18,12 +19,21 @@ class UsersController < ApplicationController
       render new_user_path
     end
   end
+
+  def index
+  end
   
   def edit
   end
 
   def update
-    raise params.inspect
+    @user.update(user_params)
+    if params[:type] = "artist"
+      @user.permissions = 10
+    elsif params[:type] = "user"
+      @user.permissions = 100
+    end
+    @user.save
   end
 
   def show #TODO Flesh out show page
