@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def update
+    raise params.inspect
+  end
+
   def show #TODO Flesh out show page
   end
 
