@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def show
+  def show #TODO Flesh out show page
   end
 
   def destroy
