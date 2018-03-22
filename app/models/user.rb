@@ -20,7 +20,7 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.email = auth.info.email
-      if auth.provider = "facebook" #facebook doesn't prove first/last seperatly
+      if auth.provider = "facebook" #facebook doesn't provide first/last seperatly
         both_names = auth.info.name.split
         user.first_name = both_names.first
         user.last_name = both_names.last

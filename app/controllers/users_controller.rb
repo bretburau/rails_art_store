@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :create, :update]
-
+  #TODO add authorizations
   def new
     @user = User.new
   end
