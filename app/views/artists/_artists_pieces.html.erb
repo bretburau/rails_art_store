@@ -1,3 +1,4 @@
 <% @artist.pieces.each do |piece| %>
   <%= link_to piece.name, piece_path(piece) %>
+  <%= link_to "Edit", edit_piece_path if logged_in? && current_artist.id == piece.artist_id %>
 <%end%>
