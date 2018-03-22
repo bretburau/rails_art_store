@@ -1,4 +1,2 @@
 <h2><%=@artist.name %></h2>
-<% @artist.pieces.each do |piece| %>
-  <%= piece.name %>
-<%end%>
+<%= render partial:'artists_pieces', locals: {artist: @artist}%>

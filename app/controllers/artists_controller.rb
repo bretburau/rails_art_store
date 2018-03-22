@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   before_action :get_artist, only: [:show, :index]
   before_action :require_login, only: [:cpanel]
+  ##TODO Authorize for Artists only?
 
   def show
   end
