@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get '/artists/cpanel', to: 'artists#cpanel'
   resources :categories #TODO Clean these up
   resources :pieces
   resources :users 
-  resources :artists
+  resources :artists do 
+    resources :pieces, only: [:show, :index]
+  end
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
