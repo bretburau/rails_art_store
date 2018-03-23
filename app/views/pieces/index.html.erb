@@ -1,0 +1,8 @@
+<h2>List of all art:</h2>
+<li>
+  <% @pieces.each do |piece| %>
+    Title:<%= piece.name %>
+    Artist:<%= piece.artist.name %>
+    <p>TODO image of piece</p>
+  <% end %>
+</li>
