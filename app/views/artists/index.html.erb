@@ -1,7 +1,8 @@
 <h2>Choose an artist you'd like to view:</h2>
 
 <% Artist.all.each do |artist| %>
-  <%= artist.name %>
-  <%= link_to artist.name, artist_path(artist) %>
-  <br>
+  <% if artist.is_artist? %>
+    <%= link_to artist.name, artist_path(artist) %>
+    <br>
+  <% end %>
 <% end %>

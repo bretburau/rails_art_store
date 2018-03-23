@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :create, :update]
-  #TODO add authorizations 
+  #TODO add authorizations   
   def new
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
+    @user.name = "%{@user.first_name} %{@user.last_name}" if @user.name.empty?
     if @user.save
       session[:user_id] = @user.id
       if params[:type] == "artist"

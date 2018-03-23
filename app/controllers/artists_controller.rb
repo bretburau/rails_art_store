@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :get_artist, only: [:show, :index]
+  before_action :get_artist, only: [:show]
   ##TODO Authorize for Artists only?
 
   def show
