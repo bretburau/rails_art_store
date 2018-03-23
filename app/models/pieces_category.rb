@@ -1,4 +1,4 @@
 class PiecesCategory < ApplicationRecord
-  belongs_to :pieces
-  belongs_to :categories
+  belongs_to :piece
+  belongs_to :category
 end
