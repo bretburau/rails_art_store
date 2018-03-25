@@ -1,8 +1,19 @@
 <h2>Add a new piece to your collection</h2>
-
+<div>
 <%= form_for @piece do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  
-
+  <br>
+  <%= f.check_box :prints_available? %> <!-- TODO add print types? i.e. cards/tshirts/etc. -->
+  <%= f.label :prints_available%>
+  <br>
+  <%= f.check_box :original_available? %>
+  <%= f.label :original_available%>
+  <br>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <br>
+  <%= f.label :new_category %>
+  <%= f.text_field :new_category %>
+  <%= f.submit "Add Piece"%>
 <% end %>
+</div>
