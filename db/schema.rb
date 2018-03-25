@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180321160823) do
 
   create_table "pieces", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.integer "user_id" ##TODO can probably remove this
     t.boolean "prints_available?", default: false
     t.boolean "original_available?", default: false
     t.datetime "created_at", null: false
