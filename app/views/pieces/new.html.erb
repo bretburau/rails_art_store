@@ -10,10 +10,13 @@
   <%= f.check_box :original_available? %>
   <%= f.label :original_available%>
   <br>
+  <h4>Categories:</h4>
+  <br>
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
   <br>
   <%= f.label :new_category %>
-  <%= f.text_field :new_category %>
+  <%= text_field_tag "piece[new_category]" %> <!--Better way to do this? -->
+  <br>
   <%= f.submit "Add Piece"%>
 <% end %>
 </div>
