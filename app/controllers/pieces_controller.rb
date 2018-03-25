@@ -17,6 +17,8 @@ class PiecesController < ApplicationController
   end
 
   def create
+    @artist = current_artist
+    @artist.pieces.build(piece_params)
     binding.pry
   end
 
@@ -24,5 +26,9 @@ class PiecesController < ApplicationController
 
   def get_piece
     @piece = Piece.find(params[:id])
+  end
+
+  def piece_params
+    params.require(:piece).permit(:name, :prints_available?, :original_available?, :category_ids)
   end
 end
