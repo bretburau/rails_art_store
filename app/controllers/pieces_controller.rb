@@ -18,7 +18,7 @@ class PiecesController < ApplicationController
 
   def create
     @artist = current_artist
-    @artist.pieces.build(piece_params)
+    @piece = @artist.pieces.build(piece_params)
     binding.pry
   end
 
@@ -29,6 +29,6 @@ class PiecesController < ApplicationController
   end
 
   def piece_params
-    params.require(:piece).permit(:name, :prints_available, :original_available, :category_ids)
+    params.require(:piece).permit(:name, :prints_available, :original_available, :category_ids, categories:[:name])
   end
 end

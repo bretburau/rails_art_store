@@ -4,11 +4,11 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
-  <%= f.check_box :prints_available? %> <!-- TODO add print types? i.e. cards/tshirts/etc. -->
-  <%= f.label :prints_available? %>
+  <%= f.check_box :prints_available %> <!-- TODO add print types? i.e. cards/tshirts/etc. -->
+  <%= f.label :prints_available %>
   <br>
-  <%= f.check_box :original_available? %>
-  <%= f.label :original_available? %>
+  <%= f.check_box :original_available %>
+  <%= f.label :original_available %>
   <br>
   <h4>Categories:</h4>
   <br>
@@ -19,7 +19,9 @@
   <% end %>
   <br>
   <%= f.label :new_category %>
-  <%= text_field_tag "piece[new_category]" %> <!--Better way to do this? -->
+  <%= f.fields_for :categories, @piece.categories.build do |categories_fields| %>
+    <%= categories_fields.text_field :name %>
+  <% end %>
   <br>
   <%= f.submit "Add Piece"%>
 <% end %>
