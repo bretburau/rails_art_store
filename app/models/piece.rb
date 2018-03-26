@@ -3,9 +3,9 @@ class Piece < ApplicationRecord
   has_many :pieces_categories
   has_many :categories, through: :pieces_categories
   belongs_to :artist
-
+  
   def categories=(categories)
-    new_category = Category.find_or_create_by(name: categories[:name])
+    new_category = Category.find_or_create_by(name: categories[:name]) unless categories[:name].empty? 
     self.categories << new_category
   end
   
