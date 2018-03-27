@@ -1,3 +1,6 @@
 <h2><%= @piece.name %></h2>
+<p><%= @piece.artist.name %></p>
+<p>Prints are <%= "not " if !@piece.prints_available %>available</p>
+<p>Original is <%= "not " if !@piece.original_available %>available</p>
+<p>TODO Image of piece?</p>
 
-<p>TODO Image of piece</p>

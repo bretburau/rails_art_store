@@ -19,7 +19,8 @@ class PiecesController < ApplicationController
   def create
     @artist = current_artist
     @piece = @artist.pieces.build(piece_params)
-    binding.pry
+    @piece.save
+    redirect_to piece_path(@piece)
   end
 
   private
