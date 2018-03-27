@@ -2,5 +2,10 @@
 <p><%= @piece.artist.name %></p>
 <p>Prints are <%= "not " if !@piece.prints_available %>available</p>
 <p>Original is <%= "not " if !@piece.original_available %>available</p>
+<ul>
+  <% @piece.categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
 <p>TODO Image of piece?</p>
 
