@@ -1,5 +1,5 @@
 class PiecesController < ApplicationController
-  before_action :get_piece, only: [:show, :edit]
+  before_action :get_piece, only: [:show, :edit, :update]
   ##TODO needs authorizations
   def index
     if params[:artist_id]
@@ -24,6 +24,11 @@ class PiecesController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @piece.update(piece_params)
+    redirect_to piece_path(@piece)
   end
 
   private

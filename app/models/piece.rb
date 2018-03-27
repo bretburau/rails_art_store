@@ -5,8 +5,10 @@ class Piece < ApplicationRecord
   belongs_to :artist
   
   def categories=(categories)
-    new_category = Category.find_or_create_by(name: categories[:name]) unless categories[:name].empty? 
-    self.categories << new_category
+    if !categories[:name].empty?
+      new_category = Category.find_or_create_by(name: categories[:name])
+      self.categories << new_category
+    end
   end
   
 end
