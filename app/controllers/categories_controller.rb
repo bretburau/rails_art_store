@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :get_category, only: [:show, :edit, :update]
-  ##TODO add auth
+  before_action :get_category, only: [:show, :edit, :update, :destroy]
+  ##TODO add auth, need admin just for fun?
   def index
     @categories = Category.all
   end
@@ -25,6 +25,11 @@ class CategoriesController < ApplicationController
     @category.update(category_params)
     @category.save
     redirect_to category_path(@category)
+  end
+
+  def destroy
+    @category.destroy
+    redirect_to categories_path
   end
 
   private

@@ -3,4 +3,4 @@
   <%= render 'form', f:f %>
   <%= f.submit 'Update Piece'%>
 <% end %>
-  
+<%= button_to "Delete this piece", piece_path(@piece), method: :delete %>
