@@ -34,6 +34,7 @@ LineItem
 
 Cart
 
+Class method to filter users categories?
 
 START Sever: rails s -b 'ssl://localhost:3000?key=localhost.key&cert=localhost.crt'
 
