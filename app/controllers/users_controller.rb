@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show, :edit, :create, :update]
+  before_action :get_user, only: [:show, :edit, :update]
   #TODO add authorizations   
   def new
     @user = User.new
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.name = "%{@user.first_name} %{@user.last_name}" if @user.name.empty?
+    @user.name = "%{@user.first_name} %{@user.last_name}" if @user.name.nil?
     if @user.save
       session[:user_id] = @user.id
       if params[:type] == "artist"
@@ -38,6 +38,8 @@ class UsersController < ApplicationController
   end
 
   def show #TODO Flesh out show page
+    redirect_to artist_path(@user) if @user.is_artist?
+
   end
 
   def destroy
