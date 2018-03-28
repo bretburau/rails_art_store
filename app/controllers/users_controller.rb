@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       if params[:type] == "artist"
         @user.permissions = 10
-        redirect_to artist_path(@user) ##TODO Redirect to Artist's CP
+        redirect_to artist_path(@user) ##TODO Redirect to Artist's CP?
       else
         redirect_to user_path(@user)
       end
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+    redirect_to edit_artist_path(@user) if @user.is_artist?
   end
 
   def update
@@ -37,12 +38,12 @@ class UsersController < ApplicationController
     @user.save
   end
 
-  def show #TODO Flesh out show page
+  def show
     redirect_to artist_path(@user) if @user.is_artist?
-
   end
 
-  def destroy
+  def destroy ##TODO require admin?
+
   end
 
   private
