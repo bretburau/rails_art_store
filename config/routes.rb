@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carts
   resources :categories #TODO Clean these up
   resources :pieces
   resources :users 
