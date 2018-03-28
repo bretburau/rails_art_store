@@ -1,6 +1,7 @@
 class PiecesController < ApplicationController
-  before_action :get_piece, only: [:show, :edit, :update]
+  before_action :get_piece, only: [:show, :edit, :update, :destroy]
   ##TODO needs authorizations
+  ##TODO add edit buttons for logged in artist
   def index
     if params[:artist_id]
       @pieces = Artist.find(params[:artist_id]).pieces
@@ -29,6 +30,11 @@ class PiecesController < ApplicationController
   def update
     @piece.update(piece_params)
     redirect_to piece_path(@piece)
+  end
+
+  def destroy
+    @piece.destroy
+    redirect_to pieces_path
   end
 
   private

@@ -1,0 +1,7 @@
+<h2>Pieces in category "<%= @category.name %>":</h2>
+
+<ul>
+  <% @category.pieces.each do |piece| %>
+    <li><%= link_to piece.name, piece_path(piece) %></li>
+  <% end %>
+</ul>
