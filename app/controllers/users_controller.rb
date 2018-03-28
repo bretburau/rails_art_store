@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show, :edit, :update]
+  before_action :get_user, only: [:show, :edit, :update, :destroy]
   #TODO add authorizations   
   def new
     @user = User.new
@@ -43,7 +43,8 @@ class UsersController < ApplicationController
   end
 
   def destroy ##TODO require admin?
-
+    @user.destroy
+    redirect_to users_path
   end
 
   private
