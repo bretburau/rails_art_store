@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328161831) do
+ActiveRecord::Schema.define(version: 20180329112536) do
 
   create_table "artists", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20180328161831) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "current_cart_id"
   end
 
 end

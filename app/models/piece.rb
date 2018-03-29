@@ -2,7 +2,8 @@ class Piece < ApplicationRecord
   validates :name, presence: true
   has_many :pieces_categories
   has_many :categories, through: :pieces_categories
-  belongs_to :artist
+  has_many :line_items
+  belongs_to :artist, :cart
   
   def categories=(categories)
     if !categories[:name].empty?

@@ -4,6 +4,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_secure_password
+  has_many :carts
+  belongs_to :current_cart, class_name: 'Cart', foreign_key: 'current_cart_id' ##Might need this?
+
 
   def is_artist?
     self.permissions <= 10
