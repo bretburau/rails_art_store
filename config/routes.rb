@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :categories #TODO Clean these up
   resources :pieces
   resources :users 
+  resources :line_items, only: [:create]
   resources :artists do 
     resources :pieces, only: [:show, :index]
   end
