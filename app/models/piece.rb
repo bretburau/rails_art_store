@@ -3,7 +3,8 @@ class Piece < ApplicationRecord
   has_many :pieces_categories
   has_many :categories, through: :pieces_categories
   has_many :line_items
-  belongs_to :artist, :cart
+  belongs_to :artist
+  has_many :cart, through: :line_items
   
   def categories=(categories)
     if !categories[:name].empty?

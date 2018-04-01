@@ -8,9 +8,18 @@ class Cart < ApplicationRecord
     if item_in_cart
       self.item_in_cart.quantity += 1
       item_in_cart.save
+      binding.pry
       self.save
     else
       self.line_items.build(item_id: new_item_id, quantity: 1)
+    end
+  end
+
+  def total
+    final_total = 0
+    self.line_items.each do |line_item|
+      piece = Piece.find(line_item.item_id)
+      final_total += piece.price * line_item.quantity
     end
   end
 end
