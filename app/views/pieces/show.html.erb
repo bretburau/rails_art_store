@@ -2,6 +2,8 @@
 <p><%= @piece.artist.name %></p>
 <p>Prints are <%= "not " if !@piece.prints_available %>available</p>
 <p>Original is <%= "not " if !@piece.original_available %>available</p>
+<%= button_to "Add to Cart", line_items_path(item_id: @piece.id) %>
+
 <ul>
   <% @piece.categories.each do |category| %>
     <li><%= category.name %></li>
