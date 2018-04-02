@@ -7,8 +7,6 @@ class LineItemsController < ApplicationController
     else
       @cart = current_user.current_cart
     end
-    binding.pry
-
     @cart.add_item(@piece.id)
     @cart.save
     current_user.save

@@ -13,7 +13,6 @@ class Cart < ApplicationRecord
       item = self.line_items.build(piece_id: new_item_id, quantity: 1)
       item.save
       self.save
-      binding.pry
     end
   end
 
