@@ -1,6 +1,7 @@
 <h2>Shopping Cart</h2>
 <ul>
-  <% current_user.current_cart.line_items.each do |item| %>
-    <li><%=link_to item.piece.name, piece_path(item.piece) %> $<%= item.piece.price%> Qty: <%= item.quantity %></li>
+  <% @cart.line_items.each do |item| %>
+    <li><%=link_to item.piece.name, piece_path(item.piece) %> <%= number_to_currency(item.piece.price)%> Qty: <%= item.quantity %></li>
   <% end %>
 </ul>
+<h3>Total: <%= number_to_currency(@cart.total) %></h3>

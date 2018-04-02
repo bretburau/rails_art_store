@@ -19,8 +19,9 @@ class Cart < ApplicationRecord
   def total
     final_total = 0
     self.line_items.each do |line_item|
-      piece = Piece.find(line_item.item_id)
+      piece = Piece.find(line_item.piece_id)
       final_total += piece.price * line_item.quantity
     end
+    final_total
   end
 end
