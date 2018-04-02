@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :carts
   belongs_to :current_cart, class_name: 'Cart', foreign_key: 'current_cart_id' ##Might need this?
-
+  ##TODO fix firstname/lastname thing
   def is_artist?
     self.permissions <= 10
   end

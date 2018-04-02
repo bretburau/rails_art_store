@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   def create
     @piece = Piece.find(params[:item_id])
-    if current_user.current_cart = nil
+    if current_user.current_cart == nil
       @cart = current_user.carts.build
       current_user.current_cart = @cart
     else
