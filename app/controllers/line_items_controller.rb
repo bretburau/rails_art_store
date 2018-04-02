@@ -9,7 +9,7 @@ class LineItemsController < ApplicationController
     end
     binding.pry
 
-    @cart.add_item(@piece)
+    @cart.add_item(@piece.id)
     @cart.save
     current_user.save
     redirect_to cart_path(@cart)

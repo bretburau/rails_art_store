@@ -6,14 +6,14 @@ class Cart < ApplicationRecord
   def add_item(new_item_id) ##TODO add quantity to orderiing?
     item_in_cart = self.line_items.find_by(item_id: new_item_id)
     if item_in_cart
-      binding.pry
-      item_in_cart.quantity += 1
+       item_in_cart.quantity += 1
       item_in_cart.save
       self.save
     else
-      item = self.line_items.build(item_id: new_item_id, quantity: 1)
+      item = self.line_items.build(piece_id: new_item_id, quantity: 1)
       item.save
       self.save
+      binding.pry
     end
   end
 

@@ -1,4 +1,4 @@
 class LineItem < ApplicationRecord
   belongs_to :cart
-  # belongs_to :piece
+  belongs_to :piece
 end

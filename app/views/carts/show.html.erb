@@ -1,0 +1,7 @@
+<h2>Shopping Cart</h2>
+<ul>
+  <%= current_user.current_cart.line_items.each do |item| %>
+    <% binding.pry %>
+    <li><%=item.name %> $<%= item.price%> Qty: <%= item.quantity %></li>
+  <% end %>
+</ul>
