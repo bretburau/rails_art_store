@@ -6,7 +6,7 @@
             <li><%= link_to "Sign up", new_user_path %></li>
         <% else %>
             <li>Cart: $<%= link_to current_user.current_cart.total, cart_path(current_user.current_cart) %><%=current_user.current_cart %></li>
-            <li><%= "Signed in as #{current_user.email}" %></li>
+            <li><%= link_to current_user.first_name, user_path(current_user) %></li>
             <li><%= link_to "Sign out", logout_path, method: :delete %></li>
         <% end %>
     </ul>
