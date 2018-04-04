@@ -1,3 +1,5 @@
 <h2><%=@artist.name %></h2>
+TODO button broken
 <%= button_to "Upload a new image", new_piece_path if logged_in? %>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>
+<p>TODO fix this page</p>

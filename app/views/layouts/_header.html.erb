@@ -5,7 +5,11 @@
             <li><%= link_to "Sign in", login_path %></li>
             <li><%= link_to "Sign up", new_user_path %></li>
         <% else %>
-            <li>Cart: $<%= link_to current_user.current_cart.total, cart_path(current_user.current_cart) %><%=current_user.current_cart %></li>
+            <% if current_user.current_cart %>
+                <li>Cart: $<%= link_to current_user.current_cart.total, cart_path(current_user.current_cart) %><%=current_user.current_cart %></li>
+            <% else %>
+                <li>Cart Empty</li>
+            <% end %>
             <li><%= link_to current_user.first_name, user_path(current_user) %></li>
             <li><%= link_to "Sign out", logout_path, method: :delete %></li>
         <% end %>

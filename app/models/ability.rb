@@ -11,11 +11,10 @@ class Ability
     #     can :read, :all
     #   end
     user ||= User.new
-    if user.permissions = 100
-      can :read , :all
-    elsif user.permissions >= 10
-      can [:create, :destroy, :update], :pieces
-    elsif user.permissions >= 0
+    can :read, :all
+    if user.is_artist?
+      can :manage, Piece
+    elsif user.is_admin?
       can :manage, :all
     end
     # The first argument to `can` is the action you are giving the user
