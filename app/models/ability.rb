@@ -12,10 +12,11 @@ class Ability
     #   end
     user ||= User.new
     can :read, :all
-    if user.is_artist?
-      can :manage, Piece
-    elsif user.is_admin?
+    if user.is_admin?
       can :manage, :all
+    elsif user.is_artist?
+      can :manage, Piece
+      can :create, Category
     end
     # The first argument to `can` is the action you are giving the user
     # permission to do.

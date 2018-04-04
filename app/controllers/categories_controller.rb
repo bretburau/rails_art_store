@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :get_category, only: [:show, :edit, :update, :destroy]
-  ##TODO add auth, need admin just for fun?
+  load_and_authorize_resource
   def index
     @categories = Category.all
   end
