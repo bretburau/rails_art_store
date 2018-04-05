@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     redirect_to artist_path(@user) if @user.is_artist?
   end
 
-  def destroy ##TODO require admin?
+  def destroy
     @user.destroy
     redirect_to users_path
   end
