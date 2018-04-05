@@ -18,6 +18,10 @@ class Ability
       can :manage, Piece
       can :create, Category
     end
+    unless user.nil?
+      can :edit, User
+      can :update, User
+    end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions

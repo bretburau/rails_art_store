@@ -8,6 +8,8 @@ class ArtistsController < ApplicationController
   def index
   end
 
+  def 
+
   private
 
   def get_artist

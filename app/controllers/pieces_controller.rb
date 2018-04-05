@@ -1,7 +1,6 @@
 class PiecesController < ApplicationController
   before_action :get_piece, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  ##TODO add edit buttons for logged in artist
 
   def new
     @piece = Piece.new

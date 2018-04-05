@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
   #TODO add authorizations   
   def new
+    redirect_to root_path if logged_in?
     @user = User.new
   end
 
   def create
+    redirect_to root_path if logged_in?
     @user = User.new(user_params)
     @user.name = "%{@user.first_name} %{@user.last_name}" if @user.name.nil?
     @user.current_cart ||= Cart.new
@@ -26,10 +29,10 @@ class UsersController < ApplicationController
   end
   
   def edit
-    redirect_to edit_artist_path(@user) if @user.is_artist?
+    # redirect_to edit_artist_path(@user) if @user.is_artist? ##TODO necessary?
   end
 
-  def update
+  def update #TODO not updating
     @user.update(user_params)
     if params[:type] = "artist"
       @user.permissions = 10
@@ -37,6 +40,7 @@ class UsersController < ApplicationController
       @user.permissions = 100
     end
     @user.save
+    redirect_to user_path(@user)
   end
 
   def show

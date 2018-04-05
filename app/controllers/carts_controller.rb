@@ -10,7 +10,6 @@ class CartsController < ApplicationController
     @cart.save
     current_user.current_cart = nil
     current_user.save
-    
     redirect_to pieces_path
   end
 end
