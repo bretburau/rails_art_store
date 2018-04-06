@@ -24,14 +24,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
+  def index #todo auth for admin only?
   end
   
   def edit
     # redirect_to edit_artist_path(@user) if @user.is_artist? ##TODO necessary?
   end
 
-  def update 
+  def update  
     @user.update(user_params)
     if params[:type] = "artist"
       @user.permissions = 10
