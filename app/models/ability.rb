@@ -10,6 +10,7 @@ class Ability
     #   else
     #     can :read, :all
     #   end
+    alias_action :checkout, :to => :checkout
     user ||= User.new
     can :read, :all
     if user.is_admin?

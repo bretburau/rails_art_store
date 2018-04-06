@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
   #TODO authorizations
   def show
-    @cart = current_user.current_cart unless current_user.current_cart.nil?
-    # @cart = nil if @cart.status == "submitted"
+    redirect_to root_path if !logged_in? ##todo add error? CANCAN?
+    @cart = current_user.current_cart unless !logged_in?
+    redirect_to root_path if @cart.id != current_user.current_cart.id
   end
 
   def checkout
