@@ -3,7 +3,7 @@ class Cart < ApplicationRecord
   has_many :pieces, through: :line_items
   belongs_to :user
 
-  def add_item(new_item_id) ##TODO add quantity to orderiing?
+  def add_item(new_item_id)
     item_in_cart = self.line_items.find_by(piece_id: new_item_id)
     if item_in_cart
        item_in_cart.quantity += 1

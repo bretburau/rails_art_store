@@ -24,11 +24,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def index #todo auth for admin only?
+  def index
   end
   
   def edit
-    # redirect_to edit_artist_path(@user) if @user.is_artist? ##TODO necessary?
   end
 
   def update  
