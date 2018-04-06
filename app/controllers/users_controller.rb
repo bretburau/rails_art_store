@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     # redirect_to edit_artist_path(@user) if @user.is_artist? ##TODO necessary?
   end
 
-  def update #TODO not updating
+  def update 
     @user.update(user_params)
     if params[:type] = "artist"
       @user.permissions = 10

@@ -15,6 +15,10 @@ class User < ApplicationRecord
     self.permissions <= 0
   end
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
