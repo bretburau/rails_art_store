@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-  #TODO authorizations
   def show
     redirect_to root_path if !logged_in? ##todo add error? CANCAN?
     @cart = current_user.current_cart unless !logged_in?
