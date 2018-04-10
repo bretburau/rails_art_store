@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users 
   resources :line_items, only: [:create]
   resources :artists do 
-    resources :pieces, only: [:show, :index]
+    resources :pieces, only: [:show, :index, :new]
   end
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

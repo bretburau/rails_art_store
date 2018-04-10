@@ -6,9 +6,9 @@
   <%= f.text_field :last_name %><br>
   <!--#TODO Get these into form_helper format? -->
   <input type="radio" name="user[type]" id="user_type_artist" value="artist" <%= "checked" unless !user.is_artist? %>>
-  <label for="type_artist">Artist</label>
+  <label for="user_type_artist">Artist</label>
   <input type="radio" name="user[type]" id="user_type_artist" value="customer" <%= "checked" unless user.is_artist? %>>
-  <label for="type_customer">Customer</label><br> 
+  <label for="user_type_customer">Customer</label><br> 
   <%= f.label :password %>
   <%= f.password_field :password %><br>
   <%= f.label "Re-enter password" %>

@@ -1,6 +1,6 @@
 <h2><%=@artist.name %></h2>
 <% if can? :create, Piece %>
-  <%= link_to "Upload a new image", new_piece_path %>
+  <%= link_to "Upload a new image", new_artist_piece_path(@artist) %>
 <% end %>
 <br>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>
