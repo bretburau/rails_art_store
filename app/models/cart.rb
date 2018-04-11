@@ -3,6 +3,8 @@ class Cart < ApplicationRecord
   has_many :pieces, through: :line_items
   belongs_to :user
   scope :submitted, -> { where(status: 'submitted') }
+  scope :by_customer, ->(user) { where(user_id: user.id) }
+
   def add_item(new_item_id)
     item_in_cart = self.line_items.find_by(piece_id: new_item_id)
     if item_in_cart
