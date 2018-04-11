@@ -44,6 +44,6 @@ class PiecesController < ApplicationController
   end
 
   def piece_params
-    params.require(:piece).permit(:name, :prints_available, :original_available, category_ids:[], categories:[:name])
+    params.require(:piece).permit(:name, :price, :prints_available, :original_available, category_ids:[], categories:[:name])
   end
 end
