@@ -40,3 +40,5 @@ START Sever: rails s -b 'ssl://localhost:3000?key=localhost.key&cert=localhost.c
 
 ##Dynamic dispatch
 ##Dynamic definition
+
+Cart.LineItem.piece_id.artist_id?

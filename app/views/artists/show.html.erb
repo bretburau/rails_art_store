@@ -2,6 +2,7 @@
 <% if can? :create, Piece %>
   <%= link_to "Upload a new image", new_artist_piece_path(@artist) %>
 <% end %>
+<p>Recent sale: <%= Cart.contains_artist?(@artist).last %></p>
 <br>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>
 

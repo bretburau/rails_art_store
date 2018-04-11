@@ -4,6 +4,7 @@ class Cart < ApplicationRecord
   belongs_to :user
   scope :submitted, -> { where(status: 'submitted') }
   scope :by_customer, ->(user) { where(user_id: user.id) }
+  scope :contains_artist?, ->(artist) { Cart }#todo
 
   def add_item(new_item_id)
     item_in_cart = self.line_items.find_by(piece_id: new_item_id)
