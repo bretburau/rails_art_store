@@ -2,7 +2,16 @@
 <% if can? :create, Piece %>
   <%= link_to "Upload a new image", new_artist_piece_path(@artist) %>
 <% end %>
-<p>Recent sale: <%= Cart.contains_artist?(@artist).last %></p>
+<% if current_user && current_user.id == @artist.id %>
+  <p>Most recent sale:</p>
+  <ol>
+  <% @recent_cart.line_items.each do |item| %>
+    <li><%= Piece.find(item.piece_id).name %></li>
+  <% end %>
+  </ol>
+  <p>Total: $<%= @recent_cart.total %></p>
+<% end %>
+
 <br>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>
 

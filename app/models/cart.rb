@@ -4,7 +4,7 @@ class Cart < ApplicationRecord
   belongs_to :user
   scope :submitted, -> { where(status: 'submitted') }
   scope :by_customer, ->(user) { where(user_id: user.id) }
-  scope :contains_artist?, ->(artist) { Cart }#todo
+  scope :recent_sale_by, ->(artist) { artists_in_cart(artist).last }
 
   def add_item(new_item_id)
     item_in_cart = self.line_items.find_by(piece_id: new_item_id)
@@ -26,5 +26,18 @@ class Cart < ApplicationRecord
       final_total += piece.price * line_item.quantity
     end
     final_total
+  end
+
+  def self.artists_in_cart(artist) ## todo This is smelly
+    carts_with_artist = []
+    all.each do |cart|
+      cart.line_items.each do |item|
+        @piece = Piece.find(item.piece_id)
+        if @piece.artist_id == artist.id
+          carts_with_artist << cart unless carts_with_artist.include?(cart)
+        end
+      end
+    end
+    carts_with_artist
   end
 end
