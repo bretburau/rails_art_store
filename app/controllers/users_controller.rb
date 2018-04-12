@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       if params[:type] == "artist"
         @user.permissions = 10
-        redirect_to artist_path(@user) ##TODO Redirect to Artist's CP?
+        redirect_to artist_path(@user)
       else
         redirect_to user_path(@user)
       end
