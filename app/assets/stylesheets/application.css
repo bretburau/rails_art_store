@@ -21,8 +21,8 @@ nav {
   background-color: #820933;
 }
 
-nav li {
-  display: inline;
+.navbar-right {
+  margin-right: 25px;
 }
 
 .field_with_errors input {
