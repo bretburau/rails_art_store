@@ -1,21 +1,4 @@
-<!-- <nav class="navbar">
-    <ul>
-        <li> Add store home here </li>
-        <% if !logged_in? %>
-            <li><%= link_to "Sign in", login_path %></li>
-            <li><%= link_to "Sign up", new_user_path %></li>
-        <% else %>
-            <% if current_user.current_cart != nil %>
-                <li>Cart: $<%= link_to current_user.current_cart.total, cart_path(current_user.current_cart) %></li>
-            <% else %>
-                <li>Cart Empty</li>
-            <% end %>
-            <li><%= link_to current_user.first_name, user_path(current_user) %></li>
-            <li><%= link_to "Sign out", logout_path, method: :delete %></li>
-        <% end %>
-    </ul>
-</nav> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark .navbar-custom">
   <%= link_to "Art Swap", root_path, :class => "navbar-brand"%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -23,8 +6,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+        <li>
+            <%= link_to "Artists", artists_path, :class => "nav-link" %>
+        </li>
+        <li>
+            <%= link_to "Pieces", pieces_path, :class => "nav-link" %>
+        </li>
+        <li>
+            <%= link_to "Categories", categories_path, :class => "nav-link" %>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto navbar-right">
@@ -40,7 +29,7 @@
             <% end %>
             <li class="nav-item"><%= link_to "Sign out", logout_path, method: :delete, :class => "nav-link"  %></li>
         <% end %>
-        </ul>
+        
     </ul>
   </div>
 </nav>
