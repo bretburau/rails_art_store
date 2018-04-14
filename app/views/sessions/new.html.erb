@@ -1,12 +1,10 @@
 <div class="login-box">
   <%= form_for(:user, url: login_path) do |f| %>
-    <%= f.label :email %>
     <%= f.text_field :email, :placeholder => "Email Address" %><br>
-    <%= f.label :password %>
     <%= f.password_field :password, :placeholder => "Password" %><br>
-    <%= f.submit 'Login' %>
+    <%= f.submit 'Login', :class => "btn btn-default" %>
   <% end %>
-  <br>
+  <%= button_to "Register", new_user_path, :class => "btn btn-default" %>
   <a href="/auth/google_oauth2" class="social-button" id="google-connect"> <span>Connect with Google</span></a>
   <a href="/auth/facebook" class="social-button" id="facebook-connect"> <span>Connect with Facebook</span></a>
 </div>
