@@ -1,10 +1,12 @@
-<%= form_for(:user, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.submit 'Login' %>
-<% end %>
-<br>
-<%= link_to image_tag("btn_google_signin_dark_normal_web.png"), "/auth/google_oauth2", id: "sign_in" %><br>
-<%= link_to image_tag("Vk9SO.png"), "/auth/facebook", id: "sign_in" %>
+<div class="login-box">
+  <%= form_for(:user, url: login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email, :placeholder => "Email Address" %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password, :placeholder => "Password" %><br>
+    <%= f.submit 'Login' %>
+  <% end %>
+  <br>
+  <a href="/auth/google_oauth2" class="social-button" id="google-connect"> <span>Connect with Google</span></a>
+  <a href="/auth/facebook" class="social-button" id="facebook-connect"> <span>Connect with Facebook</span></a>
+</div>

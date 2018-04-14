@@ -35,6 +35,7 @@ class User < ApplicationRecord
         user.first_name = both_names.first
         user.last_name = both_names.last
       end
+      user.current_cart = Cart.new ##Save tries to validate current_cart
       user.skip_email_validation = true #Allows email and multiple oauth accounts
       user.save!
     end
