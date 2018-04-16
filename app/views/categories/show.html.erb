@@ -1,5 +1,8 @@
 <h2>Pieces in category "<%= @category.name %>":</h2>
 
+<% if can? :edit, @category %>
+  <%= button_to "Edit Category", edit_category_path, :method => :get, :class => "btn btn-secondary"%>
+<% end %>
 <% if @category.pieces.empty? %>
   <p>No pieces added yet...</p>
 <% else %>

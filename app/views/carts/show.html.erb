@@ -4,10 +4,12 @@
 <% else %>
   <ul>
     <% @cart.line_items.each do |item| %>
-      <li><%=link_to item.piece.name, piece_path(item.piece) %> <%= number_to_currency(item.piece.price)%> Qty: <%= item.quantity %></li>
+      <li>Title: <%=link_to item.piece.name, piece_path(item.piece) %> Price: <%= number_to_currency(item.piece.price)%> Qty: <%= item.quantity %></li>
     <% end %>
   </ul>
-  Status:<%= @cart.status %>
+  <% if @cart.status %>
+    Status:<%= @cart.status %>
+  <% end %>
   <h3>Total: <%= number_to_currency(@cart.total) %></h3>
   <%= button_to "Checkout", checkout_path unless @cart.status == "Submitted" %>
 <% end %>
