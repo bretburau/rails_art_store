@@ -11,5 +11,5 @@
     Status:<%= @cart.status %>
   <% end %>
   <h3>Total: <%= number_to_currency(@cart.total) %></h3>
-  <%= button_to "Checkout", checkout_path unless @cart.status == "Submitted" %>
+  <%= button_to "Checkout", checkout_path, :class => "btn btn-secondary" unless @cart.status == "Submitted" %>
 <% end %>
