@@ -24,6 +24,10 @@ h2 {
   text-align: center;
 }
 
+h3, .button_to, .edit_category {
+    text-align: center;
+}
+
 ul {
     padding: 0;
 }
@@ -34,17 +38,21 @@ ul li {
     text-align: center;
 }
 
-a {
-    color: inhereit;
-}
-
 input {
-    width: 100%;
+    width: 80%;
     border-radius: 3px;
     margin-bottom: 0.75rem;
     height: 50px;
 }
 
+input[type="submit"] {
+    width: 300px;
+    text-align: center; 
+}
+
+.center {
+    text-align: center;
+}
 .container {
   margin-top: 1rem;
 }
