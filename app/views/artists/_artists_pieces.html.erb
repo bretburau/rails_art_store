@@ -1,4 +1,4 @@
 <% @artist.pieces.each do |piece| %>
-  <%= link_to piece.name, piece_path(piece) %>
-  <%= link_to "Edit", edit_piece_path(piece) if logged_in? && current_artist.id == piece.artist_id %><br>
+  <%= button_to piece.name, piece_path(piece), :method => :get, :class => "btn btn-secondary" %>
+  <%= button_to "Edit", edit_piece_path(piece), :method => :get, :class => "btn btn-info" if logged_in? && current_artist.id == piece.artist_id %><br>
 <%end%>

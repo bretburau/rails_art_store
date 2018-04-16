@@ -1,16 +1,20 @@
-<h2><%=@artist.name %></h2>
-<% if can? :create, Piece %>
-  <%= link_to "Upload a new image", new_artist_piece_path(@artist) %>
+<h2>Name: <%=@artist.name %></h2>
+
+<% if @artist.id == current_user.id #todo cancan? %>
+  <%= button_to "Upload a new image", new_artist_piece_path(@artist), :method => :get, :class => "btn btn-info" %>
 <% end %>
-<% if current_user && current_user.id == @artist.id %>
+<!-- todo i dont know
+<%# if current_user && current_user.id == @artist.id %>
   <p>Most recent sale:</p>
   <ol>
-  <% @recent_cart.line_items.each do |item| %>
-    <li><%= Piece.find(item.piece_id).name %></li>
-  <% end %>
+  
+  <%# @recent_cart.line_items.each do |item| %>
+    <li><%#= Piece.find(item.piece_id).name %></li>
+  <%# end %>
   </ol>
-  <p>Total: $<%= @recent_cart.total %></p>
-<% end %>
+  <p>Total: $<%#= @recent_cart.total %></p>
+<#% end %>
+-->
 
 <br>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>

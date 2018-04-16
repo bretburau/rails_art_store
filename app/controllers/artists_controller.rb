@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   before_action :get_artist, only: [:show]
 
   def show
-    @recent_cart = Cart.recent_sale_by(@artist).last
+    @recent_cart = Cart.recent_sale_by(@artist) #TODO issue if cart empty?
   end
 
   def index
