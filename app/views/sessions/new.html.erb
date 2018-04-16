@@ -2,9 +2,9 @@
   <%= form_for(:user, url: login_path) do |f| %>
     <%= f.text_field :email, :placeholder => "Email Address" %><br>
     <%= f.password_field :password, :placeholder => "Password" %><br>
-    <%= f.submit 'Login', :class => "btn btn-default" %>
+    <%= f.submit 'Login', :class => "btn btn-secondary" %>
   <% end %>
-  <%= button_to "Register", new_user_path, :class => "btn btn-default" %>
+  <%= button_to "Register", new_user_path, :class => "btn btn-secondary", :method => :get %>
   <a href="/auth/google_oauth2" class="social-button" id="google-connect"> <span>Connect with Google</span></a>
   <a href="/auth/facebook" class="social-button" id="facebook-connect"> <span>Connect with Facebook</span></a>
 </div>

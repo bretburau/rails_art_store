@@ -2,7 +2,7 @@
 
 <% Artist.all.each do |artist| %>
   <% if artist.is_artist? %>
-    <%= button_to artist.name, artist_path(artist), :class => "btn btn-defualt"%>
+    <%= button_to artist.name, artist_path(artist), :method => :get, :class => "btn btn-secondary"%>
     <br>
   <% end %>
 <% end %>
