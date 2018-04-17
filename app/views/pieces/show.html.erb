@@ -1,15 +1,19 @@
-<h2><%= @piece.name %></h2>
-<p><%= @piece.artist.name %></p>
-<p>Prints are <%= "not " if !@piece.prints_available %>available</p>
-<p>Original is <%= "not " if !@piece.original_available %>available</p>
-<p>Price: $<%= @piece.price %></p>
-
-<ul>
-  <% @piece.categories.each do |category| %>
-    <li><%= category.name %></li>
+<div class="center">
+  <h2><%= @piece.name %></h2>
+  <p><%= @piece.artist.name %></p>
+  <%= image_tag 'placeholder.png', class: "image-large" %>
+  <p>Prints are <%= "not " if !@piece.prints_available %>available</p>
+  <p>Original is <%= "not " if !@piece.original_available %>available</p>
+  <p>Price: $<%= @piece.price %></p>
+  
+  <ul>
+    <% @piece.categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+  <%= button_to "Add to Cart", line_items_path(item_id: @piece.id), class: "btn btn-secondary" %>
+  <% if can? :update, @piece %>
+    <%= button_to "Edit this Piece", edit_piece_path(@piece), class: "btn btn-secondary"%>
   <% end %>
-</ul>
-<%= button_to "Add to Cart", line_items_path(item_id: @piece.id) %>
-
-<p>TODO Image of piece?</p>
+</div>
 

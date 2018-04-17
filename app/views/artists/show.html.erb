@@ -1,8 +1,11 @@
 <h2>Name: <%=@artist.name %></h2>
-
-<% if @artist.id == current_user.id #todo cancan? %>
-  <%= button_to "Upload a new image", new_artist_piece_path(@artist), :method => :get, :class => "btn btn-info" %>
+<% if logged_in? %>
+  <% if @artist.id == current_user.id #todo cancan? need to be nested? %>
+    <%= button_to "Upload a new image", new_artist_piece_path(@artist), :method => :get, :class => "btn btn-info" %>
+    <%= button_to "Edit your profile", edit_artist_path(@artist), :method => :get, :class => "btn btn-secondary"%>
+  <% end %>
 <% end %>
+<hr>
 <!-- todo i dont know
 <%# if current_user && current_user.id == @artist.id %>
   <p>Most recent sale:</p>
@@ -17,5 +20,6 @@
 -->
 
 <br>
+<h3><%=@artist.first_name%>'s Works:</h3>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>
 
