@@ -1,6 +1,6 @@
 <div class="border">
   <p>Title: <%= link_to piece.name, piece_path(piece) %></p>
   <p>Artist: <%= piece.artist.name %> | Price: $<%= piece.price %></p>
-  <%= image_tag 'placeholder.png' %>
+  <%= link_to image_tag("placeholder.png"), piece_path(piece) %>
   <%= button_to "Add to Cart", line_items_path(item_id: piece), :class => "btn btn-secondary btn-sm" %>
 </div>
