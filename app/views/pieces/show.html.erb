@@ -13,7 +13,7 @@
   </ul>
   <%= button_to "Add to Cart", line_items_path(item_id: @piece.id), class: "btn btn-secondary" %>
   <% if can? :update, @piece %>
-    <%= button_to "Edit this Piece", edit_piece_path(@piece), class: "btn btn-secondary"%>
+    <%= button_to "Edit this Piece", edit_piece_path(@piece), :method => :get, class: "btn btn-secondary"%>
   <% end %>
 </div>
 

@@ -1,16 +1,11 @@
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
-  <%= f.label "First Name" %>
-  <%= f.text_field :first_name %><br>
-  <%= f.label "Last Name" %>
-  <%= f.text_field :last_name %><br>
+  <%= f.text_field :email, :placeholder => "Email" %><br>
+  <%= f.text_field :first_name, :placeholder => "First Name" %><br>
+  <%= f.text_field :last_name, :placeholder => "Last Name" %><br>
   <!--#TODO Get these into form_helper format? -->
   <input type="radio" name="user[type]" id="user_type_artist" value="artist" <%= "checked" unless !user.is_artist? %>>
   <label for="user_type_artist">Artist</label>
   <input type="radio" name="user[type]" id="user_type_artist" value="customer" <%= "checked" unless user.is_artist? %>>
   <label for="user_type_customer">Customer</label><br> 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.label "Re-enter password" %>
-  <%= f.password_field :password_confirmation %><br>
-  <%= f.submit %>
+  <%= f.password_field :password, :placeholder => "Password" %><br>
+  <%= f.password_field :password_confirmation, :placeholder => "Re-enter Password" %><br>
+  <div class="center"><%= f.submit class: "btn btn-secondary" %></div>
