@@ -1,6 +1,6 @@
 <h2>Edit Piece: <%=@piece.name%></h2>
 <%= form_for @piece do |f| %>
   <%= render 'form', f:f %>
-  <%= f.submit 'Update Piece'%>
+  <div class="center"><%= f.submit 'Update Piece', class: "btn btn-secondary"%></div>
 <% end %>
-<%= button_to "Delete this piece", piece_path(@piece), method: :delete %>
+<%= button_to "Delete this piece", piece_path(@piece), method: :delete, :class => "btn btn-danger" %>

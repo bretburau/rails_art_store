@@ -28,6 +28,11 @@ h3, .button_to, .edit_category {
     text-align: center;
 }
 
+.btn {
+    margin: 1rem;
+}
+
+
 ul {
     padding: 0;
 }
@@ -38,8 +43,8 @@ ul li {
     text-align: center;
 }
 
-input {
-    width: 80%;
+input[type="text"] {
+    width: 100%;
     border-radius: 3px;
     margin-bottom: 0.75rem;
     height: 50px;

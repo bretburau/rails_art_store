@@ -1,14 +1,13 @@
-<%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <br>
+<div class="center">
+  <%= f.text_field :name, :placeholder => "Name" %>
+  <%= f.text_field :price, :placeholder => "Price" %>
+  </div > 
   <%= f.check_box :prints_available %> 
   <%= f.label :prints_available %>
   <br>
   <%= f.check_box :original_available %>
   <%= f.label :original_available %>
+  <hr>
   <br>
   <h4>Categories:</h4>
   <br>
@@ -23,3 +22,4 @@
     <%= categories_fields.text_field :name %>
   <% end %>
   <br>
+
