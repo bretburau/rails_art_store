@@ -1,8 +1,8 @@
 <h2>Name: <%=@artist.name %></h2>
 <% if logged_in? %>
   <% if @artist.id == current_user.id #todo cancan? need to be nested? %>
-    <%= button_to "Upload a new image", new_artist_piece_path(@artist), :method => :get, :class => "btn btn-info" %>
-    <%= button_to "Edit your profile", edit_artist_path(@artist), :method => :get, :class => "btn btn-secondary"%>
+    <%= button_to "Upload a new image", new_artist_piece_path(@artist), :method => :get, :class => "btn btn-secondary" %>
+    <%= button_to "Edit your profile", edit_user_path(@artist), :method => :get, :class => "btn btn-info"%>
   <% end %>
 <% end %>
 <hr>
