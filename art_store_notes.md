@@ -42,3 +42,5 @@ START Sever: rails s -b 'ssl://localhost:3000?key=localhost.key&cert=localhost.c
 ##Dynamic definition
 
 Cart.LineItem.piece_id.artist_id?
+
+kill server: kill -9 $(lsof -i tcp:3000 -t)
