@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       return head(:forbidden) unless !@user.nil? && @user.authenticate(params[:user][:password])
     end
     session[:user_id] = @user.id
-    @user.current_cart ||= @user.carts.build #todo needed?
+    @user.current_cart ||= @user.carts.build #left in for nil protection
     if @user.is_artist?
       redirect_to artist_path(@user)
     else

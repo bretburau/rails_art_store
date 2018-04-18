@@ -39,7 +39,6 @@ class UsersController < ApplicationController
     end
     @user.current_cart ||= Cart.new #Nil protection
     @user.save
-    binding.pry
     redirect_to user_path(@user)
   end
 

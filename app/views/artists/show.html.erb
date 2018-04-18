@@ -6,18 +6,19 @@
   <% end %>
 <% end %>
 <hr>
-<!-- todo i dont know
-<%# if current_user && current_user.id == @artist.id %>
-  <p>Most recent sale:</p>
-  <ol>
-  
-  <%# @recent_cart.line_items.each do |item| %>
-    <li><%#= Piece.find(item.piece_id).name %></li>
-  <%# end %>
-  </ol>
-  <p>Total: $<%#= @recent_cart.total %></p>
-<#% end %>
--->
+<!-- todo i dont know -->
+<% if current_user.id == @artist.id %>
+  <div class="center">
+    <p>Most recent sale:</p>
+    <ol>
+    <% @recent_cart.last.line_items.each do |item| %>
+      <li><%= Piece.find(item.piece_id).name %></li>
+    <% end %>
+    </ol>
+    <p>Total: $<%= @recent_cart.last.total %></p>
+  </div>
+<% end %>
+
 
 <br>
 <h3><%=@artist.first_name%>'s Works:</h3>
