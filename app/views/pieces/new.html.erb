@@ -1,4 +1,13 @@
 <h2>Add a new piece to your collection</h2>
+<% if @piece.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @piece.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <div>
 <%= form_for @piece do |f| %> 
   <%= render 'form', f: f %>

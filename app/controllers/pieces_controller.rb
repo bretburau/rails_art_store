@@ -20,8 +20,11 @@ class PiecesController < ApplicationController
   def create
     @artist = current_artist
     @piece = @artist.pieces.build(piece_params)
-    @piece.save
-    redirect_to piece_path(@piece)
+    if @piece.save
+      redirect_to piece_path(@piece)
+    else
+      render new_piece_path
+    end
   end
 
   def edit

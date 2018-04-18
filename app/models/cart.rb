@@ -38,7 +38,6 @@ class Cart < ApplicationRecord
         end
       end
     end
-    binding.pry
     carts_with_artist
   end
 end

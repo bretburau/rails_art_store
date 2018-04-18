@@ -10,11 +10,11 @@
 <% if current_user.id == @artist.id %>
   <div class="center">
     <p>Most recent sale:</p>
-    <ol>
+    <ul>
     <% @recent_cart.last.line_items.each do |item| %>
       <li><%= Piece.find(item.piece_id).name %></li>
     <% end %>
-    </ol>
+    </ul>
     <p>Total: $<%= @recent_cart.last.total %></p>
   </div>
 <% end %>
