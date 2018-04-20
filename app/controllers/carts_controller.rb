@@ -1,10 +1,7 @@
 class CartsController < ApplicationController
   def show
-    redirect_to root_path if !logged_in? ##todo add error? CANCAN?
+    redirect_to root_path if !logged_in?
     @cart = current_user.current_cart unless !logged_in?
-    # @cart ||= Cart.new
-    # @cart.save ##TODO why do i need this?
-    # redirect_to root_path if @cart.id != current_user.current_cart.id
   end
 
   def checkout

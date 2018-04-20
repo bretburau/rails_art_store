@@ -1,3 +1,6 @@
+<% if @artist.pieces.empty? %>
+  <p class="center">Artists hasn't uploaded any works yet...</p>
+<% end %>
 <% @artist.pieces.each do |piece| %>
   <%= button_to piece.name, piece_path(piece), :method => :get, :class => "btn btn-secondary" %>
   <%= button_to "Edit", edit_piece_path(piece), :method => :get, :class => "btn btn-info" if logged_in? && current_artist.id == piece.artist_id %><br>

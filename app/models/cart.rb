@@ -29,7 +29,7 @@ class Cart < ApplicationRecord
     final_total
   end
 
-  def self.carts_that_include?(artist) ## todo This is smelly
+  def self.carts_that_include?(artist) ##I don't really like this
     carts_with_artist = []
     all.each do |cart|
       cart.line_items.each do |item|

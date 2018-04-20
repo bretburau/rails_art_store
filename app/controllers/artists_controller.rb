@@ -6,7 +6,7 @@ class ArtistsController < ApplicationController
 
   def reports
     # @recent_cart = Cart.recent_sale_by(@artist) #TODO method returns all carts
-    @cart = Cart.most_valuable
+    @cart = Cart.submitted.most_valuable
   end
 
   def index
