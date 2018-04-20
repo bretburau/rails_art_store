@@ -12,8 +12,10 @@
     <% end %>
   </ul>
   <%= button_to "Add to Cart", line_items_path(item_id: @piece.id), class: "btn btn-secondary" %>
-  <% if can? :update, @piece %>
-    <%= button_to "Edit this Piece", edit_piece_path(@piece), :method => :get, class: "btn btn-secondary"%><!-- todo only show for logged in user -->
+  <% if current_user %> <!-- ##better way to do this? -->
+    <% if can? :update, @piece && current_user.id == @piece.id %>
+      <%= button_to "Edit this Piece", edit_piece_path(@piece), :method => :get, class: "btn btn-secondary"%>
+    <% end %>
   <% end %>
 </div>
 
