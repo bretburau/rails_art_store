@@ -1,0 +1,12 @@
+<div class="center">
+  <h2>Most valuable sale:</h2>
+  <ul>
+    <% @cart.line_items.each do |item|%>
+      <% @piece = Piece.find(item.piece_id) %>
+      <li>Title: <%= @piece.name %>, Price: <%= number_to_currency(@piece.price) %></li>
+    <% end %>
+    <hr>
+    <h3>Customer: <%= User.find(@cart.user_id).name %></h3>
+    <h3>Cart total: <%= number_to_currency(@cart.total) %></h3>
+  </ul>
+</div>

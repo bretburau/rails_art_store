@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :pieces
   resources :users 
   resources :line_items, only: [:create]
+  get '/artists/:id/reports', to: 'artists#reports', as: 'artist_reports'
   resources :artists do 
     resources :pieces, only: [:show, :index, :new]
   end

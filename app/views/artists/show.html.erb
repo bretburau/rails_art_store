@@ -3,23 +3,10 @@
   <% if @artist.id == current_user.id #todo cancan? need to be nested? %>
     <%= button_to "Upload a new image", new_artist_piece_path(@artist), :method => :get, :class => "btn btn-secondary" %>
     <%= button_to "Edit your profile", edit_user_path(@artist), :method => :get, :class => "btn btn-info"%>
+    <%= button_to "View Reports", artist_reports_path(@artist), :method => :get, :class => "btn btn-info"%>
   <% end %>
 <% end %>
 <hr>
-<!-- todo i dont know -->
-<% if current_user.id == @artist.id %>
-  <div class="center">
-    <p>Most recent sale:</p>
-    <ul>
-    <% @recent_cart.last.line_items.each do |item| %>
-      <li><%= Piece.find(item.piece_id).name %></li>
-    <% end %>
-    </ul>
-    <p>Total: $<%= @recent_cart.last.total %></p>
-  </div>
-<% end %>
-
-
 <br>
 <h3><%=@artist.first_name%>'s Works:</h3>
 <%= render partial:'artists_pieces', locals: {artist: @artist}%>
