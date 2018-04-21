@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/carts/thanks', to: 'carts#thanks', as: 'thanks'
+
   resources :carts
   resources :categories #TODO Clean these up
   resources :pieces

@@ -10,6 +10,9 @@ class CartsController < ApplicationController
     @cart.save
     current_user.current_cart = Cart.new ##User won't save if current_cart is nil
     current_user.save
-    redirect_to pieces_path
+    redirect_to thanks_path
+  end
+
+  def thanks
   end
 end

@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20180402113812) do
 
   create_table "pieces", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.boolean "prints_available", default: false
     t.boolean "original_available", default: false
     t.datetime "created_at", null: false
