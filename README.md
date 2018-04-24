@@ -1,5 +1,5 @@
 # Art Store
-This is a simple app for creating and editing recipes that consist of groceries.
+This is a an app built in Ruby on Rails where artists' can upload their work and users can view and add them to a shopping cart.
 
 ## Installation
 
