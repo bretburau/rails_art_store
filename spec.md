@@ -21,3 +21,4 @@ Confirm:
 - [X] Limited logic in controllers
 - [X] Views use helper methods if appropriate
 - [X] Views use partials if appropriate
+
