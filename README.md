@@ -3,8 +3,9 @@ This is a an app built in Ruby on Rails where artists' can upload their work and
 
 ## Installation
 
-To install, clone this repo, then migrate and seed the database:
+To install, clone this repo, install dependencies, then migrate and seed the database:
 ```
+bundle install
 rake db:migrate
 rake db:seed
 ```
@@ -25,7 +26,7 @@ If you set your user to be an 'Artist' either during creation or on the edit use
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/bretburau/drummingnews_cli_scraper.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bretburau/rails_art_store.
 
 ## License
 

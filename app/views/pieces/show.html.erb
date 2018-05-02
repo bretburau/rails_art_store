@@ -11,7 +11,7 @@
       <li><%= category.name %></li>
     <% end %>
   </ul>
-  <%= button_to "Add to Cart", line_items_path(item_id: @piece.id), class: "btn btn-secondary" %>
+  <%= button_to "Add to Cart", line_items_path(item_id: @piece.id), class: "btn btn-secondary" if logged_in? %>
   <% if current_user %> <!-- ##better way to do this? -->
     <% if can? :update, @piece && current_user.id == @piece.id %>
       <%= button_to "Edit this Piece", edit_piece_path(@piece), :method => :get, class: "btn btn-secondary"%>

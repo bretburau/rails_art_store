@@ -11,6 +11,10 @@ class User < ApplicationRecord
     self.permissions <= 10
   end
 
+  def isnt_artist?
+    self.permissions >= 100
+  end
+
   def is_admin?
     self.permissions <= 0
   end

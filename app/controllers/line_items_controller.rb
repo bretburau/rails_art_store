@@ -1,6 +1,5 @@
 class LineItemsController < ApplicationController
   def create
-    #todo must be logged in error!!
     @piece = Piece.find(params[:item_id])
     if current_user.current_cart == nil
       @cart = current_user.carts.build

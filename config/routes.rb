@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/carts/thanks', to: 'carts#thanks', as: 'thanks'
 
   resources :carts
-  resources :categories #TODO Clean these up
+  resources :categories 
   resources :pieces
   resources :users 
   resources :line_items, only: [:create]
