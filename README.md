@@ -9,7 +9,7 @@ bundle install
 rake db:migrate
 rake db:seed
 ```
-Seeding isn't totally necessary, but it will populate the database with some dummy artists, pieces, and categories to browse.
+Seeding isn't totally necessary, but it will populate the database with some placeholder artists, pieces, and categories to browse.
 
 Start a local server:
 ```

@@ -32,9 +32,9 @@ class UsersController < ApplicationController
 
   def update  
     @user.update(user_params)
-    if params[:type] = "artist"
+    if params[:user][:type] == "artist"
       @user.permissions = 10
-    elsif params[:type] = "user"
+    elsif params[:user][:type] == "user"
       @user.permissions = 100
     end
     @user.current_cart ||= Cart.new #Nil protection
