@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+  
   def new
     redirect_to root_path if logged_in?
     @user = User.new
