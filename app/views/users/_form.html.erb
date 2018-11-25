@@ -1,7 +1,6 @@
   <%= f.text_field :email, :placeholder => "Email" %><br>
   <%= f.text_field :first_name, :placeholder => "First Name" %><br>
   <%= f.text_field :last_name, :placeholder => "Last Name" %><br>
-  <!--#TODO Get these into form_helper format? -->
   <input type="radio" name="user[type]" id="user_type_artist" value="artist" <%= "checked" unless !user.is_artist? %>>
   <label for="user_type_artist">Artist</label>
   <input type="radio" name="user[type]" id="user_type_artist" value="customer" <%= "checked" unless user.is_artist? %>>
