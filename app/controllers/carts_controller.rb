@@ -12,7 +12,4 @@ class CartsController < ApplicationController
     current_user.save
     redirect_to thanks_path
   end
-
-  def thanks
-  end
 end
