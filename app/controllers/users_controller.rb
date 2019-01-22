@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     elsif params[:user][:type] == "user"
       @user.permissions = 100
     end
-    @user.current_cart ||= Cart.new #Nil protection
+    @user.current_cart ||= Cart.new
     @user.save
     redirect_to user_path(@user)
   end
